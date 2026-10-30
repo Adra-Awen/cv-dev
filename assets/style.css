@@ -1,0 +1,205 @@
+/*COULEURS PRINCIPALES
+    lavande #ae99b9
+    mauve #483b57
+    gris foncé #323232
+    noir #000000
+*/
+
+@font-face {
+    font-family: 'ClearSans';
+    src: url('../fonts/ClearSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ClearSans';
+    src: url('../fonts/ClearSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ClearSans';
+    src: url('../fonts/ClearSans-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* HEADER */
+/*mobile*/
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    justify-content:space-between;
+    margin-bottom: 50px;
+}
+
+.photo-id {
+    position: relative;
+    background-color: #d8cce0;
+    box-shadow: -8px 8px 0px #ae99b9;
+    margin-right: 100px;
+}
+
+.photo-id img {
+    width: 150px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.nom {
+    font-size: 34px;
+    color: #ae99b9;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.titre-contact {
+    font-size: 18px;
+    font-weight: bold;
+    color: #323232;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    text-transform: uppercase;
+}
+
+.coordonnees-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+
+.icone-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #323232;
+}
+
+.icone-contact img {
+    width: 20px;
+    height: auto;
+    display: block;
+}
+
+
+/*tablette & desktop*/
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .coordonnees-contact {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        gap: 10px 30px;
+    }
+}
+
+/*BODY*/
+/*mobile*/
+body {
+    font-family: 'ClearSans', sans-serif;
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*Main*/
+.wrapper-titre{
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.wrapper-titre .fond-violet{
+    position: absolute;
+    top: 12px;
+    left: -30px;
+    right: 5px;
+    bottom: -4px;
+    background-color: #ae99b9;
+    z-index: 1;
+}
+
+.wrapper-titre .main-h2{
+    position:relative;
+    left: 0;
+    z-index: 2;
+    color:#483b57;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+
+p{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 5px; 
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.description-job{
+    font-style: italic;
+}
+
+.description-stage{
+    margin-bottom: 30px;
+}
+
+.description-important{
+    font-weight: bold;
+}
+
+.main-h3{
+    margin-left: 20px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:#323232;
+}
+
+.lieu{
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-style: normal;
+}
+
+/*desktop / tablette*/
+@media (min-width: 768px) {
+    body {
+        font-family: 'ClearSans', sans-serif;
+        background-color: #ffffff;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+
+
+/*Aside*/
+
+/*FOOTER*/

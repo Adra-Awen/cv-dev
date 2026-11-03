@@ -28,15 +28,20 @@
 
 /* HEADER */
 /*mobile*/
-header {
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bloc-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 10px;
-    margin-top: 50px;
-    justify-content:space-between;
-    margin-bottom: 50px;
+    justify-content: center;
 }
 
 .photo-id {
@@ -44,6 +49,7 @@ header {
     background-color: #d8cce0;
     box-shadow: -8px 8px 0px #ae99b9;
     margin-right: 100px;
+    width: fit-content;
 }
 
 .photo-id img {
@@ -57,6 +63,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 0;
     gap: 10px;
 }
 
@@ -98,16 +105,61 @@ header {
     display: block;
 }
 
+.fond-violet-stage{
+    position: absolute;
+    top: 12px;
+    left: -30px;
+    right: 0;
+    bottom: -4px;
+    background-color: #ae99b9;
+    z-index: 1;
+}
+
+.wrapper-titre .header-h2{
+    position:relative;
+    left: 0;
+    z-index: 2;
+    color:#483b57;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 3px;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
 
 /*tablette & desktop*/
 @media (min-width: 768px) {
     header {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         gap: 40px;
-        margin-top: 3cm;
-        margin-bottom: 50px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .bloc-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 20px;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    .photo-id {
+    position: relative;
+    background-color: #d8cce0;
+    box-shadow: -8px 8px 0px #ae99b9;
+    margin-right: 100px;
+    width: fit-content;
+    margin-left: 30px;
+}
+
+    .header-content {
+        align-items: flex-start;
     }
 
     .coordonnees-contact {
@@ -115,6 +167,16 @@ header {
         grid-template-columns: repeat(2, auto);
         align-items: center;
         gap: 10px 30px;
+    }
+
+        .fond-violet-stage{
+        position: absolute;
+        top: 12px;
+        left: -5px;
+        right: 0;
+        bottom: -4px;
+        background-color: #ae99b9;
+        z-index: 1;
     }
 }
 
@@ -199,10 +261,12 @@ p{
     display: flex;
     flex-direction: row-reverse;
     gap: 30px;
+    align-items: flex-start;
     }
 
     aside{
         flex: 0 0 280px;
+        margin-top: 0 !important;
     }
 
     main{
@@ -215,32 +279,55 @@ p{
         margin: 0 auto;
         padding: 0 20px;
     }
-}
 
-.lien-header{
+    .lien-header{
     color: #323232;
     text-decoration: none;
+    }
+
+    .lien-header:hover{
+        text-decoration: underline;
+    }
 }
 
-.lien-header:hover{
-    text-decoration: underline;
-}
+
 
 /*Aside*/
 /*mobile*/
 aside{
+    position: relative;
     background-color: #ae99b9;
-    padding: 20px;
+    margin-top: 12px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
-.aside-h2{
+.wrapper-titre-aside{
+    position: relative;
+    margin-bottom: 25px;
+    margin-top: 1px !important;
+}
+
+.wrapper-titre-aside .fond-blanc{
+    position: absolute;
+    top: 12px;
+    left: -30px;
+    right: 0px;
+    bottom: -4px;
     background-color: #ffffff;
-    color: #323232;
+    z-index: 1;
+    padding-left: 30px;
+}
+
+.wrapper-titre-aside .aside-h2{
+    position:relative;
+    left: 0;
+    z-index: 2;
+    color:#323232;
     text-transform: uppercase;
+    margin: 0;
     letter-spacing: 3px;
-    font-size: 20px;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    font-size: 25px;
 }
 
 .aside-h3{

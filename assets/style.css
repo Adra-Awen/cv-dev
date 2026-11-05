@@ -1,9 +1,10 @@
-/*COULEURS PRINCIPALES
+/*=====================
+COULEURS PRINCIPALES
     lavande #ae99b9
     mauve #483b57
     gris foncé #323232
     noir #000000
-*/
+=======================*/
 
 @font-face {
     font-family: 'ClearSans';
@@ -26,14 +27,29 @@
     font-style: italic;
 }
 
+/* BODY & GENERAL */
+body {
+    font-family: 'ClearSans', sans-serif;
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+p{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 5px; 
+    font-size: 16px;
+    line-height: 22px;
+}
+
 /* HEADER */
-/*mobile*/
 header{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .bloc-header {
@@ -63,7 +79,6 @@ header{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 0;
     gap: 10px;
 }
 
@@ -72,6 +87,7 @@ header{
     color: #ae99b9;
     letter-spacing: 4px;
     text-transform: uppercase;
+    margin-top: 20px;
 }
 
 .titre-contact {
@@ -79,8 +95,7 @@ header{
     font-weight: bold;
     color: #323232;
     letter-spacing: 1px;
-    margin-bottom: 20px;
-    margin-left: 0;
+    margin: 0 0 20px 0;
     text-transform: uppercase;
 }
 
@@ -117,7 +132,6 @@ header{
 
 .wrapper-titre .header-h2{
     position:relative;
-    left: 0;
     z-index: 2;
     color:#483b57;
     text-transform: uppercase;
@@ -127,68 +141,7 @@ header{
     padding-left: 20px;
 }
 
-
-/*tablette & desktop*/
-@media (min-width: 768px) {
-    header {
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
-        gap: 40px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    .bloc-header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        gap: 20px;
-        text-align: left;
-        margin: 0 auto;
-    }
-
-    .photo-id {
-    position: relative;
-    background-color: #d8cce0;
-    box-shadow: -8px 8px 0px #ae99b9;
-    margin-right: 100px;
-    width: fit-content;
-    margin-left: 30px;
-}
-
-    .header-content {
-        align-items: flex-start;
-    }
-
-    .coordonnees-contact {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        align-items: center;
-        gap: 10px 30px;
-    }
-
-        .fond-violet-stage{
-        position: absolute;
-        top: 12px;
-        left: -5px;
-        right: 0;
-        bottom: -4px;
-        background-color: #ae99b9;
-        z-index: 1;
-    }
-}
-
-/*BODY*/
-/*mobile*/
-body {
-    font-family: 'ClearSans', sans-serif;
-    background-color: #ffffff;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* MAIN & ACCORDEONS*/
 
 .wrapper-titre{
     position: relative;
@@ -207,7 +160,6 @@ body {
 
 .wrapper-titre .main-h2{
     position:relative;
-    left: 0;
     z-index: 2;
     color:#483b57;
     text-transform: uppercase;
@@ -216,16 +168,22 @@ body {
     font-size: 25px;
 }
 
-p{
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 5px; 
-    font-size: 16px;
-    line-height: 22px;
+.detail-job {
+    margin-bottom: 30px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.item-experience .en-tete.actif ~ .detail-job {
+    max-height: 300px;
+    opacity: 1;
 }
 
 .description-job{
     font-style: italic;
+    margin: 5px 50px 0px 50px;
 }
 
 .description-stage{
@@ -234,78 +192,87 @@ p{
 
 .description-important{
     font-weight: bold;
+    margin: 5px 50px 0 50px;
 }
 
 .main-h3{
-    margin-left: 20px;
-    margin-bottom: 0px;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
     color:#323232;
 }
 
 .lieu{
-    margin-left: 20px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0;
     font-style: normal;
 }
 
 .lien-header{
     color: #323232;
-}
-
-/*desktop / tablette*/
-@media (min-width: 768px) {
-    .layout{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 30px;
-    align-items: flex-start;
-    }
-
-    aside{
-        flex: 0 0 280px;
-        margin-top: 0 !important;
-    }
-
-    main{
-        flex: 1;
-    }
-    body {
-        font-family: 'ClearSans', sans-serif;
-        background-color: #ffffff;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .lien-header{
-    color: #323232;
     text-decoration: none;
-    }
-
-    .lien-header:hover{
-        text-decoration: underline;
-    }
 }
 
+.lien-header:hover {
+    text-decoration: underline;
+}
 
+/* Affichage de l'accordéon actif */
+.item-experience .en-tete.actif ~ .description-job,
+.item-experience .en-tete.actif ~ .description-important {
+    display: block;
 
-/*Aside*/
-/*mobile*/
+}
+
+.en-tete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.info-texte {
+    flex: 1;
+}
+
+.info-texte .main-h3 {
+    width: 100%;
+    margin-left: 20px;
+}
+
+.info-texte .lieu {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.toggle-button{
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+    color: #ae99b9;
+}
+
+.en-tete.actif .toggle-button {
+    transform: rotate(180deg);
+}
+
+/* ASIDE */
 aside{
     position: relative;
     background-color: #ae99b9;
     margin-top: 12px;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding: 20px 0 20px 20px;
 }
 
 .wrapper-titre-aside{
     position: relative;
-    margin-bottom: 25px;
-    margin-top: 1px !important;
+    margin: 1px 0 25px 0;
 }
 
 .wrapper-titre-aside .fond-blanc{
@@ -321,13 +288,14 @@ aside{
 
 .wrapper-titre-aside .aside-h2{
     position:relative;
-    left: 0;
     z-index: 2;
+    padding-right: 20px;
     color:#323232;
     text-transform: uppercase;
     margin: 0;
     letter-spacing: 3px;
     font-size: 25px;
+    white-space: nowrap;
 }
 
 .aside-h3{
@@ -347,7 +315,7 @@ aside{
 }
 
 .texte-aside{
-    margin: 0;
+    margin: 0 30px 0 0;
     font-size: 14px;
     line-height: 1.5;
     padding-bottom: 5px;
@@ -365,4 +333,70 @@ aside{
     text-decoration: underline;
 }
 
-/*FOOTER*/
+
+/* FOOTER */
+footer p {
+
+    font-size: 14px;
+    color: #323232;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* MEDIA QUERIES (TABLETTE & DESKTOP    ) */
+@media (min-width: 768px) {
+    body{
+        max-width: 900px;;
+    }
+
+    header {
+        gap: 40px;
+        margin: 30px 0;
+    }
+
+    .bloc-header {
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 20px;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    .photo-id {
+        position: relative;
+        background-color: #d8cce0;
+        box-shadow: -8px 8px 0px #ae99b9;
+        margin-right: 100px;
+        margin-left: 30px;
+        width: fit-content;
+    }
+
+    .coordonnees-contact {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        gap: 10px 30px;
+    }
+
+        .fond-violet-stage{
+        left: -5px;
+    }
+        .layout{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    aside {
+        flex: 0 0 280px;
+        margin-top: 0 !important;
+        align-self: stretch;
+    }
+
+    main{
+        flex: 1;
+    }
+
+}

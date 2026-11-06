@@ -22,7 +22,7 @@ COULEURS PRINCIPALES
 
 @font-face {
     font-family: 'ClearSans';
-    src: url('font/ClearSans-Italic.woff') format('woff');
+    src: url('fonts/ClearSans-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
@@ -329,6 +329,32 @@ aside{
     text-decoration: underline;
 }
 
+/*Affichage de la flèche retour vers le haut*/
+#bouton-retour {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    color:#323232;
+    background-color:rgba(174,153,185, 0.6);
+    width: 30px;
+    height:30px;
+    padding-bottom: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s ease, transform 0.2 ease;
+}
+
+#bouton-retour.visible {
+    opacity:1;
+    visibility: visible;
+}
 
 /* FOOTER */
 footer p {

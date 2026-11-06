@@ -178,7 +178,7 @@ header{
 }
 
 .item-experience .en-tete.actif ~ .detail-job {
-    max-height: 300px;
+    max-height: 1000px;
     opacity: 1;
 }
 
